@@ -1,0 +1,281 @@
+/**
+ * Cassey Forrre food - Global Design System Tokens & Base Styles
+ * Hardcoded token discipline: Luxury Black & Beige palette
+ */
+
+:root {
+  /* Colors */
+  --color-primary: #121212;
+  --color-primary-dark: #0A0A0A;
+  --color-secondary: #D4B996;
+  --color-secondary-light: #F5EFE6;
+  --color-secondary-subtle: #FAF7F2;
+  --color-accent: #C5A059;
+  --color-accent-hover: #b38f48;
+  --color-text-main: #1A1A1A;
+  --color-text-muted: #666059;
+  --color-text-light: #F8F6F0;
+  --color-text-light-muted: #B8B2A9;
+  --color-border: #E7DFD5;
+  --color-border-dark: #2A2724;
+  --color-card-bg: #FFFFFF;
+  --color-card-dark: #1A1816;
+
+  /* Typography */
+  --font-heading: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  --text-base: 18px;
+  --text-base-mobile: 16px;
+  --line-height-body: 1.65;
+  --line-height-heading: 1.15;
+
+  /* Spacing Scale (4, 8, 16, 24, 32, 48, 64, 96, 128px) */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-96: 96px;
+  --space-128: 128px;
+
+  /* Layout */
+  --max-width: 1200px;
+  --nav-height: 80px;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+
+  /* Elevation */
+  --shadow-rest: 0 4px 20px -2px rgba(18, 18, 18, 0.05);
+  --shadow-hover: 0 14px 32px -4px rgba(18, 18, 18, 0.12);
+  --shadow-dark: 0 10px 30px rgba(0, 0, 0, 0.4);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 220ms ease;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-main);
+  background-color: var(--color-secondary-subtle);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: var(--text-base-mobile);
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: var(--line-height-body);
+  background-color: var(--color-secondary-subtle);
+  color: var(--color-text-main);
+  overflow-x: hidden;
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--color-text-main);
+  line-height: var(--line-height-heading);
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-weight: 500;
+}
+
+h2 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+p {
+  max-width: 65ch;
+  color: var(--color-text-muted);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-24);
+  padding-right: var(--space-24);
+}
+
+.section {
+  padding-top: var(--space-96);
+  padding-bottom: var(--space-96);
+  position: relative;
+  scroll-margin-top: var(--nav-height);
+}
+
+@media (max-width: 1024px) {
+  .section {
+    padding-top: var(--space-64);
+    padding-bottom: var(--space-64);
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding-top: var(--space-48);
+    padding-bottom: var(--space-48);
+  }
+}
+
+/* Section Eyebrow Header */
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-16);
+}
+
+/* Luxury UI Component Tokens */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  border-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+  background-color: #222222;
+  border-color: #222222;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  transform: translateY(-2px);
+}
+
+.btn-beige {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  border-color: var(--color-secondary);
+  font-weight: 600;
+}
+
+.btn-beige:hover {
+  background-color: #ebd3b4;
+  border-color: #ebd3b4;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.btn-ghost-light {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-light);
+  border-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+}
+
+.btn-ghost-light:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+  transform: translateY(-2px);
+}
+
+/* Modal Overlay */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-24);
+  animation: modalFadeIn var(--transition-fast) ease-out;
+}
+
+.modal-content {
+  background-color: var(--color-card-bg);
+  border-radius: var(--radius-md);
+  max-width: 540px;
+  width: 100%;
+  padding: var(--space-32);
+  position: relative;
+  box-shadow: var(--shadow-dark);
+  border: 1px solid var(--color-border);
+  animation: modalSlideUp var(--transition-normal) ease-out;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalSlideUp {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}

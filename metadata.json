@@ -1,0 +1,6 @@
+{
+  "name": "Cassey Forrre food | Restaurant in Stoke-on-Trent",
+  "description": "Cassey Forrre food in Fenton, Stoke-on-Trent. Fresh ingredients and unforgettable flavours across breakfast, lunch, dinner, and freshly prepared meals.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
